@@ -1,0 +1,20 @@
+import java.util.*;
+class TowerOfHanoi
+{
+	public static void TowersOfHanoi(int n, char From_Rd, char To_Rd, char Aux_Rd)
+	{
+		if(n==1)
+		{
+			System.out.println("Move disk from rod "+From_Rd+" to rod "+To_Rd);
+			return;
+		}
+		TowersOfHanoi(n-1,From_Rd,Aux_Rd,To_Rd);
+		System.out.println("Move disk "+n+" from rod "+From_Rd+" to rod "+To_Rd);
+		TowersOfHanoi(n-1,Aux_Rd,To_Rd,From_Rd);
+	}
+	public static void main(String args[])
+	{
+		int n=4;
+		TowersOfHanoi(n,'A','C','B');
+	}
+}
